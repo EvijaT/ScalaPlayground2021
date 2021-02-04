@@ -7,9 +7,8 @@ object AgeCalculator extends App {
   //TODO calculate and display year when they will be 100 :)
 
   val myName = readLine("What is your name?")
-  val myAge = readLine(s"Nice to meet you, $myName! How old are you?").toFloat
-  val currentYear = readLine (s"Nice! What is the current year, $myName?").toFloat
-  val whenHundred = currentYear +100 - myAge
-  println(s"Random fact, $myName! The year you will turn 100 years old is ${whenHundred.round}!")
+  val myAge = readLine(s"Nice to meet you, $myName! How old are you?").toInt
+  println(s"Random fact, $myName! The year you will turn 100 years old is ${100 - myAge +2021}!")
+
 
 }
