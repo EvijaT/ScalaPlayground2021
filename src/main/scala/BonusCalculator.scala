@@ -4,13 +4,14 @@ object BonusCalculator extends App {
   //TODO Calculate yearly Xmas Bonus
   //Ask for Employee Name
   val employee = readLine("What is your name? ")
-  val monthlyWage = readLine(s"Nice to talk to you $employee! What is your monthly wage? ").toLong
-  val employment = readLine("How many years have you worked with us? ").toInt
+  val monthlyWage = readLine(s"Nice to talk to you $employee! What is your monthly wage? ").toFloat
+  val employment = readLine("How many years have you worked with us? ").toFloat
+val minYears = 2
 
-  if (employment > 2) {
-    println(s"Congratulations, $employee, your Christmas bonus this year is ${monthlyWage*0.15*(employment-2)} euro!")
-  } else if (employment < 2) {
-    println(s"$employee, you can receive Cristmas bonus after ${2-employment} year!")
+  if (employment > minYears) {
+    println(s"Congratulations, $employee, your Christmas bonus this year is ${monthlyWage*0.15*(employment.round-minYears)} euro!")
+  } else if (employment < minYears) {
+    println(s"$employee, try to apply for Christmas bonus next time!")
   } else {
     println(s"Congratulations, $employee, your Christmas bonus this year is ${monthlyWage*0.15} euro!")
   }
